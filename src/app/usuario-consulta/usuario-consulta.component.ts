@@ -14,7 +14,11 @@ export class UsuarioConsultaComponent implements OnInit {
 
   getUsuario(nombre: string): void {
     this.usuarioService.getUsuario(nombre)
-        .subscribe(usuario => this.usuario = usuario);
+        .subscribe(
+          usuario => this.usuario = usuario,
+          error => this.error = true,
+          () => this.error = false
+    );
   }
 
   ngOnInit() {

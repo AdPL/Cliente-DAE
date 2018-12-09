@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UsuarioConsultaComponent } from '../usuario-consulta/usuario-consulta.component';
 import { MessagesComponent } from '../messages/messages.component';
 import { UsuariosComponent } from '../usuarios/usuarios.component';
+import { UsuarioRegistrarComponent } from '../usuario-registrar/usuario-registrar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { UsuariosComponent } from '../usuarios/usuarios.component';
     FooterComponent,
     UsuarioConsultaComponent,
     MessagesComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    UsuarioRegistrarComponent
   ],
   imports: [
     CommonModule
