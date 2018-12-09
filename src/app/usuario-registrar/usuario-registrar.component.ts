@@ -9,13 +9,15 @@ import { UsuariosService } from '../usuarios.service';
 })
 export class UsuarioRegistrarComponent implements OnInit {
   usuario: Usuario;
+  error: boolean;
+
   constructor(private usuarioService: UsuariosService) { }
 
   registrarUsuario(nombre: string, email: string, password: string): void {
     let usuario = new Usuario(nombre, email, password);
     this.usuarioService.registrarUsuario(usuario)
         .subscribe(
-          usuario => this.usuario = usuario ,
+          usuario => this.usuario = usuario,
           error => this.error = true,
           () => this.error = false
         );

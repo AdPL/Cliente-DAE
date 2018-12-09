@@ -9,6 +9,7 @@ import { UsuariosService } from '../usuarios.service';
 })
 export class UsuarioConsultaComponent implements OnInit {
   usuario: Usuario;
+  error: boolean;
 
   constructor(private usuarioService: UsuariosService) { }
 

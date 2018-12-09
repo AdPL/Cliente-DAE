@@ -18,7 +18,7 @@ export class UsuariosService {
     this.messageService.add(`UsuariosService: ${message}`);
   }
 
-  registrarUsuario(usuario: Usuario): void {
+  registrarUsuario(usuario: Usuario): Observable<Usuario> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
