@@ -11,19 +11,20 @@
       El nombre de usuario ya existe
     </div>
   </div>
-    <!--<form >-->
+  {{ diagnostic }}
+    <form (ngSubmit)="registrarUsuario()">
       <div class="form-group">
         <label for="inputNombre">Nombre de usuario</label>
-        <input #nombre type="text" class="form-control" id="inputNombre">
+        <input type="text" [formControl]="nombre" class="form-control" id="inputNombre">
       </div>
       <div class="form-group">
         <label for="inputEmail">Email</label>
-        <input #email type="email" class="form-control" id="inputEmail">
+        <input type="email" [formControl]="email" class="form-control" id="inputEmail">
       </div>
       <div class="form-group">
         <label for="inputPassword">Contraseña</label>
-        <input #password type="password" class="form-control" id="inputPassword">
+        <input type="password" [formControl]="password" class="form-control" id="inputPassword">
       </div>
-      <button class="btn btn-primary" (click)="registrarUsuario(nombre.value, email.value, password.value); nombre.value=''">Buscar</button>
-    <!--</form>-->
+      <button class="btn btn-primary">Registrar usuario</button>
+    </form>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from '../usuario';
 import { UsuariosService } from '../usuarios.service';
 
@@ -11,10 +12,14 @@ export class UsuarioRegistrarComponent implements OnInit {
   usuario: Usuario;
   error: boolean;
 
+  nombre = new FormControl('');
+  email = new FormControl('');
+  password = new FormControl('');
+
   constructor(private usuarioService: UsuariosService) { }
 
-  registrarUsuario(nombre: string, email: string, password: string): void {
-    let usuario = new Usuario(nombre, email, password);
+  registrarUsuario(): void {
+    let usuario = new Usuario(this.nombre.value, this.email.value, this.password.value);
     this.usuarioService.registrarUsuario(usuario)
         .subscribe(
           usuario => this.usuario = usuario,
