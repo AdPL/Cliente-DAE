@@ -1,0 +1,23 @@
+<div>
+  <div *ngIf="eventos && !error">
+    <div class="alert alert-success" role="alert">
+      <h3>Eventos del usuario</h3>
+      <ul>
+        <li *ngFor="let evento of eventos">{{ evento.titulo }}</li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="error">
+    <div class="alert alert-danger" role="alert">
+      <h3>Error</h3>
+      No hay eventos
+    </div>
+  </div>
+    <form (ngSubmit)="getEventosAsistente();">
+    <div class="form-group">
+      <label for="inputNombreAsistente">Nombre de usuario</label>
+      <input type="text" [formControl]="nombre" class="form-control" id="inputNombreAsistente">
+    </div>
+    <button class="btn btn-primary">Ver eventos</button>
+  </form>
+</div>
