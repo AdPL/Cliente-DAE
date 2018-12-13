@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { Evento } from './evento';
 import { Usuario } from './usuario';
 import { MessageService } from './message.service';
 
@@ -31,6 +32,16 @@ export class UsuariosService {
     const url = `${this.usuariosUrl}/${nombre}`;
     this.log('user loaded')
     return this.http.get<Usuario>(url)
+  }
+
+  getEventosOrganizador(nombre: string): Observable<Evento[]> {
+    const url = `${this.usuariosUrl}/${nombre}/organizador?celebrado=true`;
+    return this.http.get<Evento[]>(url);
+  }
+
+  getEventosAsistente(nombre: string): Observable<Evento[]> {
+    const url = `${this.usuariosUrl}/${nombre}/asistente?celebrado=true`;
+    return this.http.get<Evento[]>(url);
   }
 
   searchUser(nombre: string): Observable<Usuario[]> {
