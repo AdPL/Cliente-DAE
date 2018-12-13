@@ -11,11 +11,11 @@
       Usuario no encontrado
     </div>
   </div>
-    <!--<form (ngSubmit)="getUsuario(nombre.value); nombre.value=''">-->
+    <form (ngSubmit)="getUsuario()">
     <div class="form-group">
-      <label for="inputNombre">Nombre de usuario</label>
-      <input #nombre type="text" class="form-control" id="inputNombreBusqueda">
+      <label for="inputNombre">Nombre de usuario: {{ nombre.value }}</label>
+      <input type="text" [formControl]="nombre" class="form-control" id="inputNombreBusqueda">
     </div>
-    <button class="btn btn-primary" (click)="getUsuario(nombre.value); nombre.value=''">Buscar</button>
-  <!--</form>-->
+    <button class="btn btn-primary">Buscar</button>
+  </form>
 </div>
