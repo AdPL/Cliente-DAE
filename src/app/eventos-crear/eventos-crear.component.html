@@ -1,0 +1,41 @@
+<div>
+  <div *ngIf="evento && !error">
+    <div class="alert alert-success" role="alert">
+      <h3>Evento creado correctamente</h3>
+      {{ evento.titulo }}: {{ evento.descripcion}} ({{ evento.nMax }})
+    </div>
+  </div>
+  <div *ngIf="error">
+    <div class="alert alert-danger" role="alert">
+      <h3>Error</h3>
+      El evento ya existe
+    </div>
+  </div>
+    <form (ngSubmit)="crearEvento();">
+      <div class="form-group">
+        <label for="inputTitulo">Título del evento</label>
+        <input type="text" [formControl]="titulo" class="form-control" id="inputTitulo">
+      </div>
+      <div class="form-group">
+        <label for="inputDescripcion">Descripción</label>
+        <input type="text" [formControl]="descripcion" class="form-control" id="inputDescripcion">
+      </div>
+      <div class="form-group">
+        <label for="inputNMax">Plazas</label>
+        <input type="number" [formControl]="plazas" class="form-control" id="inputNMax">
+      </div>
+      <div class="form-group">
+        <label for="inputLocalizacion">Localización</label>
+        <input type="text" [formControl]="localizacion" class="form-control" id="inputLocalizacion">
+      </div>
+      <div class="form-group">
+        <label for="inputFecha">Fecha</label>
+        <input type="date" [formControl]="fecha" class="form-control" id="inputFecha">
+      </div>
+      <div class="form-group">
+        <label for="inputTipo">Tipo</label>
+        <input type="number" [formControl]="tipo" class="form-control" id="inputTipo">
+      </div>
+      <button class="btn btn-primary">Crear evento</button>
+    </form>
+</div>
