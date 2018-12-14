@@ -1,21 +1,28 @@
-<div>
-  <div *ngIf="usuario && !error">
-    <div class="alert alert-success" role="alert">
-      <h3>Datos del usuario</h3>
-      {{usuario.idUsuario}}: {{ usuario.nombre}} ({{ usuario.email }})
+<div class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Perfil</h5>
+        <div *ngIf="usuario && !error">
+          <div class="alert alert-success" role="alert">
+            <h3>Datos del usuario</h3>
+            {{usuario.idUsuario}}: {{ usuario.nombre}} ({{ usuario.email }})
+          </div>
+        </div>
+        <div *ngIf="!usuario">
+          <div class="alert alert-danger" role="alert">
+            <h3>Error</h3>
+            Usuario no encontrado
+          </div>
+        </div>
+          <form (ngSubmit)="getUsuario()">
+          <div class="form-group">
+            <label for="inputNombre">Nombre de usuario: {{ nombre.value }}</label>
+            <input type="text" [formControl]="nombre" class="form-control" id="inputNombreBusqueda"/>
+          </div>
+          <button class="btn btn-primary">Buscar</button>
+        </form>
+      </div>
     </div>
   </div>
-  <div *ngIf="error">
-    <div class="alert alert-danger" role="alert">
-      <h3>Error</h3>
-      Usuario no encontrado
-    </div>
-  </div>
-    <form (ngSubmit)="getUsuario()">
-    <div class="form-group">
-      <label for="inputNombre">Nombre de usuario: {{ nombre.value }}</label>
-      <input type="text" [formControl]="nombre" class="form-control" id="inputNombreBusqueda">
-    </div>
-    <button class="btn btn-primary">Buscar</button>
-  </form>
 </div>
