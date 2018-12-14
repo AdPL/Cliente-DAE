@@ -28,6 +28,16 @@ export class UsuariosService {
     return this.http.post<Usuario>(this.usuariosUrl, usuario, httpOptions);
   }
 
+  identificarUsuario(usuario: Usuario): Observable<Usuario> {
+    const url = `${this.usuariosUrl}/identificar`;
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.post<Usuario>(url, usuario, httpOptions);
+  }
+
   getUsuario(nombre: string): Observable<Usuario> {
     const url = `${this.usuariosUrl}/${nombre}`;
     this.log('user loaded')
