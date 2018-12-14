@@ -21,6 +21,7 @@ import { EventosCrearComponent } from './eventos-crear/eventos-crear.component';
 import { UsuarioInscribirComponent } from './usuario-inscribir/usuario-inscribir.component';
 import { EventoCancelarComponent } from './evento-cancelar/evento-cancelar.component';
 import { EventosListaComponent } from './eventos-lista/eventos-lista.component';
+import { UsuarioIdentificarComponent } from './usuario-identificar/usuario-identificar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EventosListaComponent } from './eventos-lista/eventos-lista.component';
     EventosCrearComponent,
     UsuarioInscribirComponent,
     EventoCancelarComponent,
-    EventosListaComponent
+    EventosListaComponent,
+    UsuarioIdentificarComponent
   ],
   imports: [
     BrowserModule,
