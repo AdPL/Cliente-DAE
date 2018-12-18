@@ -9,7 +9,7 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class UsuariosService {
-  private usuariosUrl = 'http://localhost:8080/app/usuarios';
+  private usuariosUrl = 'https://localhost:8080/app/usuarios';
 
   constructor(
     private http: HttpClient,
