@@ -1,3 +1,5 @@
+import { Usuario } from './usuario';
+
 export class Evento {
   titulo: string;
   nMax: number;

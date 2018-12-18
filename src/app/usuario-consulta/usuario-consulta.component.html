@@ -9,7 +9,7 @@
             {{usuario.idUsuario}}: {{ usuario.nombre}} ({{ usuario.email }})
           </div>
         </div>
-        <div *ngIf="!usuario">
+        <div *ngIf="error">
           <div class="alert alert-danger" role="alert">
             <h3>Error</h3>
             Usuario no encontrado
