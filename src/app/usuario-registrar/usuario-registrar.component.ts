@@ -26,6 +26,9 @@ export class UsuarioRegistrarComponent implements OnInit {
           error => this.error = true,
           () => this.error = false
         );
+    if ( !this.error ) {
+      sessionStorage.setItem('user', this.nombre.value);
+    }
   }
 
   ngOnInit() {
