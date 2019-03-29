@@ -1,0 +1,25 @@
+<div>
+  <div *ngIf="usuario && !error">
+    <div class="alert alert-success" role="alert">
+      <h3>Usuario registrado correctamente</h3>
+      {{usuario.idUsuario}}: {{ usuario.nombre}} ({{ usuario.email }})
+    </div>
+  </div>
+  <div *ngIf="error">
+    <div class="alert alert-danger" role="alert">
+      <h3>Error</h3>
+      El nombre de usuario ya existe
+    </div>
+  </div>
+    <form (ngSubmit)="identificarUsuario()">
+      <div class="form-group">
+        <label for="inputNombreIdentificar">Nombre de usuario</label>
+        <input type="text" [formControl]="nombre" class="form-control" id="inputNombreIdentificar">
+      </div>
+      <div class="form-group">
+        <label for="inputPasswordIdentificar">Contraseña</label>
+        <input type="password" [formControl]="password" class="form-control" id="inputPasswordIdentificar">
+      </div>
+      <button class="btn btn-primary">Registrar usuario</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<div>
+  <div *ngIf="evento && !error">
+    <div class="alert alert-success" role="alert">
+      <h3>Datos del evento</h3>
+      <ul>
+        <li>Título: {{ evento.titulo }}</li>
+        <li>Descripción: {{ evento.descripcion }}</li>
+        <li>Localización: {{ evento.localizacion }}</li>
+        <li>Plazas: {{ evento.nMax }}</li>
+        <li>Fecha: {{ evento.fecha }}</li>
+        <li>Organizador: {{ evento.organizador.nombre }}</li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="error">
+    <div class="alert alert-danger" role="alert">
+      <h3>Error</h3>
+      Evento no encontrado
+    </div>
+  </div>
+    <form (ngSubmit)="getEventoTitulo()">
+    <div class="form-group">
+      <label for="inputEventoTitulo">Título del evento</label>
+      <input type="text" [formControl]="titulo" class="form-control" id="inputEventoTitulo">
+    </div>
+    <button class="btn btn-primary">Buscar</button>
+  </form>
+</div>

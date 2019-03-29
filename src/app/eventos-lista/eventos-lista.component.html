@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-4">
+      Filtrado
+    </div>
+    <div *ngFor="let evento of eventos" class="col col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ evento.titulo }}</h5>
+          <ul>
+            <li>Descripción: {{ evento.descripcion }}</li>
+            <li>Localización: {{ evento.localizacion }}</li>
+            <li>Plazas: {{ evento.nMax }}</li>
+            <li>Fecha: {{ evento.fecha }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
